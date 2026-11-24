@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.tawman.nut-ups",
+  "name": "UPS (NUT)",
+  "version": "1.0.0",
+  "author": "Todd A. Wood",
+  "license": "MIT",
+  "description": "UPS battery and power status in the bar, from Network UPS Tools (NUT): charge ring, power source, auto-shutdown status, live readings and recent power events.",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "BarWidget.qml" },
+  "barWidget": {
+    "displayName": "UPS (NUT)",
+    "description": "UPS battery and power status from NUT, with a detail panel.",
+    "category": "System",
+    "aliases": ["ups", "nut", "battery backup", "power"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": { "ups": "", "pollSeconds": 5 },
+    "schema": [
+      { "key": "ups", "type": "string", "label": "NUT UPS (name@host; blank = first local UPS)", "defaultValue": "" },
+      { "key": "pollSeconds", "type": "integer", "label": "Refresh interval (seconds)", "min": 2, "max": 60, "step": 1, "defaultValue": 5 }
+    ]
+  }
+}
